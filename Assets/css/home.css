@@ -1,0 +1,125 @@
+body{
+	background-color: grey;
+}
+
+.todo-container{
+	height: 40rem;
+	width:  30rem;
+	background-color: rgb(238, 234, 234);
+	margin-left:33%;
+	overflow: scroll;
+}
+.todo-container h1{
+	text-align: center;
+}
+
+#task-input{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 2px;
+	border-top: 1px solid rgb(177, 174, 174);
+	border-bottom: 1px solid rgb(177, 174, 174);
+	height: 4rem;
+}
+
+
+label{
+	margin-left: 1.5rem;
+	padding: 5px;
+}
+
+#task-input input{
+	border: none;
+	background-color: transparent;
+	margin-left: 1.9rem;
+	margin-bottom: 1rem;
+}
+
+
+
+/* Category Drop-down and Calender */
+.category-date{
+	display: flex;
+	border-bottom: 1px solid rgb(177, 174, 174);
+	height: 4rem;
+	justify-content: space-between;
+}
+
+#task-category{
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	border-right: 1px solid rgb(177, 174, 174);
+}
+
+#task-category select{
+	margin-left: 1.6rem;
+	background-color: transparent;
+	border: none;
+}
+
+#calender{
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+#calender input{
+	border: none;
+	background-color: transparent;
+}
+
+#calender label{
+	margin: 0
+}
+/* Add and Delete button */
+
+.add-del-outer-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+	height: 10rem;
+	border-bottom: 1px solid rgb(177, 174, 174);;
+
+}
+
+#add-del-inner-container{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+#add-button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	height: 4rem;
+	width:8rem;
+	margin-right: 2rem;
+	border: none;
+	color: white;
+}
+
+#add-button i{
+	margin-right: 1rem;
+}
+
+#del-button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #EE351E;
+	height: 4rem;
+	width:8rem;
+}
+
+#del-button i{
+	margin-right:0.5rem;
+}
+
+#del-button a{
+	text-decoration: none;
+	color: white;
+}

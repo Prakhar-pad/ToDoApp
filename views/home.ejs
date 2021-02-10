@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html>
-	<title>
+	<title> 
 		<%=title%>
 	</title>
 	<head>
-		<link rel='stylesheet' href=''/>
+		<link rel='stylesheet' href='/css/home.css'/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- <link rel='stylesheet' href='/css/reset.css'/> -->
+
 	</head>
-	<body>
-		<h1>ToDOApp</h1>
+	<body>  
+		<div class='todo-container'>
+			<h1>TODO App</h1>
+		<form>
+			<div id='task-input'>
+				<label>Description</label>
+				<input type="text" placeholder="Add a task" name='taskName' required/>
+			</div>
+
+			<div class='category-date'>
+				<div id='task-category'>
+					<label for='category'>Category</label>
+					<select>
+						<option selected disabled hidden>Choose here</option>
+						<option value="blank"></option>
+						<option value="personal">Personal</option>
+						<option value="work">Work</option>
+						<option value="office">Office</option>
+						<option value="other">Other</option>
+					</select>
+				</div>
+				<div id='calender'>
+					<label for='date'>Due Date</label>
+					<input type='date' placeholder="DD-MM-YYYY" required/>
+				</div>
+			</div>
+
+				<div class="add-del-outer-container">
+					<div id='add-del-inner-container'>
+						
+						<button type="submit" id='add-button'><i class="fa fa-plus"></i> Add Task</button>
+						<span id='del-button'><a href=''><i class="fa fa-trash"></i></i> Delete</a></span>
+					</div>
+
+				</div>
+
+		</form>
+
+			</div>
 
 	</body>
 </html>
