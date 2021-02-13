@@ -14,7 +14,7 @@ const taskList=[
 
 function home(req,res){
 
-	console.log(req.body);
+	// console.log(req.body);
 
 	TodoList.find({}, function(err,toDoList){
 		if(err){
@@ -46,15 +46,23 @@ function addTask(req,res){
 			}
 			console.log('*******', toDoList);
 			return res.redirect('back');
-
 		}
-	
-	)
-
-
-	
+	)	
 	}
+
+function deleteTask(req,res){
+
+	console.log('***id**= ',req.body.id);
+	TodoList.findByIdAndDelete(req.body.id, function(err){
+		if(err){
+			console.log("Error in deleting task");
+			return
+		}
+		return res.redirect('back');
+	})
+}
 module.exports={
 	home:home,
-	addTask:addTask
+	addTask:addTask,
+	deleteTask:deleteTask
 };

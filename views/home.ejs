@@ -25,10 +25,10 @@
 					<select name='category' id='category'>
 						<option selected disabled hidden>Choose</option>
 						<option value="blank"></option>
-						<option value="personal">Personal</option>
-						<option value="work">Work</option>
-						<option value="office">Office</option>
-						<option value="other">Other</option>
+						<option value="Personal">Personal</option>
+						<option value="Work">Work</option>
+						<option value="Office">Office</option>
+						<option value="Other">Other</option>
 					</select>
 				</div>
 				<div id='calender'>
@@ -40,21 +40,25 @@
 				<div class="add-del-outer-container">
 					<div id='add-del-inner-container'>
 						
-						<button type="submit" id='add-button'><i class="fa fa-plus"></i> Add Task</button>
-						<span id='del-button'><a href=''><i class="fa fa-trash"></i></i> Delete</a></span>
+						<button type="submit" id='add-button'><i class="fa fa-plus"></i> ADD TASKS</button>
 					</div>
  
 				</div>
 
 		</form>
-<!-- https://ninjasfiles.s3.amazonaws.com/0000000000002059.png -->
+
+	<form action='/delete-task' method="POST">
+				<button id='del-button' type='submit'><i class="fa fa-trash"></i>DELETE</button>
+
 		<% for(let i of locals.Task_List){%> 
 			<div id='task-list'>
 			
 				<div  id=task-item>
-					<div id='checkbox'>
-						<input type='checkbox' value='<%=i._id%>'>
-					</div>
+						<div id='checkbox'>
+							<input type='checkbox' name='id' value='<%=i._id%>'>
+						</div>
+
+					</form>
 					
 					<div id='task-name-date'>
 						
@@ -70,7 +74,7 @@
 
 						</span>
 					</div>
-					<span id='category'><%=i.category%></span>
+					<span id='category-item'><%=i.category%></span>
 				</div>
 			</div>
 			
@@ -84,3 +88,5 @@
 
 	</body>
 </html>
+
+<!-- https://ninjasfiles.s3.amazonaws.com/0000000000002059.png -->
