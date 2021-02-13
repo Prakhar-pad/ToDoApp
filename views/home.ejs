@@ -13,7 +13,7 @@
 	<body>  
 		<div class='todo-container'>
 			<h1>TODO App</h1>
-		<form>
+		<form action='/add-task' method="POST">
 			<div id='task-input'>
 				<label>Description</label>
 				<input type="text" placeholder="Add a task" name='taskName' required/>
@@ -22,8 +22,8 @@
 			<div class='category-date'>
 				<div id='task-category'>
 					<label for='category'>Category</label>
-					<select>
-						<option selected disabled hidden>Choose here</option>
+					<select name='category' id='category'>
+						<option selected disabled hidden>Choose</option>
 						<option value="blank"></option>
 						<option value="personal">Personal</option>
 						<option value="work">Work</option>
@@ -33,7 +33,7 @@
 				</div>
 				<div id='calender'>
 					<label for='date'>Due Date</label>
-					<input type='date' placeholder="DD-MM-YYYY" required/>
+					<input type='date' name='dueDate' required/>
 				</div>
 			</div>
 
@@ -43,10 +43,42 @@
 						<button type="submit" id='add-button'><i class="fa fa-plus"></i> Add Task</button>
 						<span id='del-button'><a href=''><i class="fa fa-trash"></i></i> Delete</a></span>
 					</div>
-
+ 
 				</div>
 
 		</form>
+<!-- https://ninjasfiles.s3.amazonaws.com/0000000000002059.png -->
+		<% for(let i of locals.Task_List){%> 
+			<div id='task-list'>
+			
+				<div  id=task-item>
+					<div id='checkbox'>
+						<input type='checkbox' value='<%=i._id%>'>
+					</div>
+					
+					<div id='task-name-date'>
+						
+						<span><%=i.taskName%></span>
+						<span>
+							<i id='calendar-icon' class="fa fa-calendar"></i>
+							<span class='date-task' id='<%=i._id%>'></span>
+							<script>
+								var d = new Date('<%=i.dueDate%>');
+								var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+								document.getElementById("<%=i._id%>").innerHTML = months[d.getMonth()]+' '+d.getDate() +','+' '+d.getFullYear();
+							</script>
+
+						</span>
+					</div>
+					<span id='category'><%=i.category%></span>
+				</div>
+			</div>
+			
+			
+			
+		<%}%>
+
+
 
 			</div>
 
