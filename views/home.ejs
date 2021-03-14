@@ -5,6 +5,7 @@
 	</title>
 	<head>
 		<link rel='stylesheet' href='/css/home.css'/>
+		<link rel='stylesheet' href='/css/tooltip.css'/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- <link rel='stylesheet' href='/css/reset.css'/> -->
@@ -37,28 +38,64 @@
 				</div>
 			</div>
 
-				<div class="add-del-outer-container">
+				
 					<div id='add-del-inner-container'>
 						
 						<button type="submit" id='add-button'><i class="fa fa-plus"></i> ADD TASKS</button>
 					</div>
- 
-				</div>
 
 		</form>
 
-	<form action='/delete-task' method="POST">
-				<button id='del-button' type='submit'><i class="fa fa-trash"></i>DELETE</button>
+	<!-- <form action='/delete-task' method="POST"> -->
+				<!-- <button id='del-button' type='submit'><i class="fa fa-trash"></i>DELETE</button> -->
 
 		<% for(let i of locals.Task_List){%> 
+
+			<% if(i._id==locals.taskId) { %>
+				<h2 id=edit-heading>Edit task</h2>
+				<form action='/update-task/?id=<%=taskId%>' method="POST">
+					<div id='task-input'>
+						<label>Description</label>
+						<input type="text" placeholder="Edit task" name='taskName' value ='<%=i.taskName%>' required/>
+					</div>
+		
+					<div class='category-date'>
+						<div id='task-category'>
+							<label for='category'>Category</label>
+							<select name='category' id='category'>
+								<option selected disabled hidden>Choose</option>
+								<option value="blank"></option>
+								<option value="Personal">Personal</option>
+								<option value="Work">Work</option>
+								<option value="Office">Office</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+						<div id='calender'>
+							<label for='date'>Due Date</label>
+							<input type='date' name='dueDate'/>
+						</div>
+					</div>
+	
+								<button type="submit" id='edit-button'>Submit</button>
+						<a href='/'>Cancel</a>
+		
+				</form>
+
+
+
+
+			<% } else {%>
+
+
 			<div id='task-list'>
 			
 				<div  id=task-item>
 						<div id='checkbox'>
-							<input type='checkbox' name='id' value='<%=i._id%>'>
+							<input type='checkbox' name='id[]' id='checkbox-id' value='<%=i._id%>'>
 						</div>
 
-					</form>
+					<!-- </form> -->
 					
 					<div id='task-name-date'>
 						
@@ -75,17 +112,40 @@
 						</span>
 					</div>
 					<span id='category-item'><%=i.category%></span>
+				
+					<div class='delete-button'>
+						<a href='delete-task/?id=<%=i._id %>'>
+							<div class="tooltip">
+								<img src='https://image.flaticon.com/icons/svg/1214/1214428.svg' height='20px' />
+							    <span class="tooltiptext">delete</span>
+							</div>
+
+							<!-- <i class="fas fa-minus-circle"></i> -->
+							<!-- <i class="fas fa-trash"></i> -->
+						</a>
+					</div>
+					<div class='edit-button'>
+						<a href='edit-task/?id=<%=i.id %>'>
+							<!-- <i class="fa fa-edit"></i> -->
+							<div class="tooltip">
+								<img src='https://image.flaticon.com/icons/png/128/2921/2921222.png' height='20px'/>
+							    <span class="tooltiptext">edit</span>
+							</div>
+						</a>
+					</div>
 				</div>
+				
+
 			</div>
 			
-			
+			<% } %>
 			
 		<%}%>
 
 
 
 			</div>
-
+			<script type='text/javascript' src='/js/script.js'></script>
 	</body>
 </html>
 

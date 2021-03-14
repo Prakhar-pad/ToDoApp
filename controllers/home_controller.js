@@ -2,6 +2,7 @@ const db=require('../config/mongoose');
 const TodoList=require('../models/todo');
 
 
+
 const taskList=[
 
 	{
@@ -51,9 +52,10 @@ function addTask(req,res){
 	}
 
 function deleteTask(req,res){
+	console.log(req.query);
 
-	console.log('***id**= ',req.body.id);
-	TodoList.findByIdAndDelete(req.body.id, function(err){
+	console.log('***id**= ',req.query.id);
+	TodoList.findByIdAndDelete(req.query.id, function(err){
 		if(err){
 			console.log("Error in deleting task");
 			return
@@ -61,8 +63,44 @@ function deleteTask(req,res){
 		return res.redirect('back');
 	})
 }
+
+function editTask(req, res){
+
+	let id=req.query.id
+	TodoList.find({}, function(err,toDoList){
+		if(err){
+			console.log('Error in editing task');
+			return
+		}
+		return res.render('home', {
+			title: "Home",
+			Task_List: toDoList,
+			taskId: id
+		});
+	})
+
+}
+
+function updateTask(req, res){
+	let id=req.query.id;
+	console.log('******', id);
+	console.log(req.body);
+
+	TodoList.findByIdAndUpdate(id,{taskName: req.body.taskName, category: req.body.category, dueDate: req.body.dueDate}, function(err, toDoList){
+		if(err){
+			console.log('Error in updating contact');
+			return;
+		}
+		return res.redirect('/');
+	});
+
+}
+
+
 module.exports={
 	home:home,
 	addTask:addTask,
-	deleteTask:deleteTask
+	deleteTask:deleteTask,
+	editTask:editTask,
+	updateTask: updateTask
 };
