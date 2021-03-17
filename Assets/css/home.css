@@ -6,14 +6,14 @@ body{
 	background-color: rgb(179, 178, 184);
 }
 
-.todo-container{
+#todo-container{
 	height: 100%;
 	width:  30rem;
 	background-color: rgb(160, 205, 235);
 	margin-left:33%;
 	/* overflow: scroll; */
 }
-.todo-container h1{
+#todo-container h1{
 	text-align: center;
 	color:rgb(8, 76, 133);
 }
@@ -199,11 +199,13 @@ option {
 /* media query */
 
 @media only screen and (max-width: 500px){
-	.todo-container{
-		height: auto;
-		width:  100%;
+
+	body{
+		display: flex;
+		flex-direction: column;
+		padding: 0;
 		background-color: rgb(160, 205, 235);
-		/* margin-left:33%; */
-		/* overflow: scroll; */
+		overflow: hidden;
+		margin: 0;
 	}
 }
