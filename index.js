@@ -1,7 +1,7 @@
 // ps aux | grep node--to kill port
 
 const express=require('express');
-const PORT=process.env.PORT||8080;
+const PORT=process.env.PORT || 8080;
 const app=express();
 const bodyParser=require('body-parser');
 
@@ -23,7 +23,7 @@ app.listen(PORT, function(err){
 	console.log(err, 'Error Occured');
 	return;
 	}
-	console.log(`Server is running on port: ${port}`);
+	console.log(`Server is running on port: ${PORT}`);
 
 
 });
