@@ -7,11 +7,11 @@ body{
 }
 
 .todo-container{
-	height: 40rem;
+	height: 100%;
 	width:  30rem;
 	background-color: rgb(160, 205, 235);
 	margin-left:33%;
-	overflow: scroll;
+	/* overflow: scroll; */
 }
 .todo-container h1{
 	text-align: center;
@@ -127,7 +127,7 @@ option {
 	display: flex;
 	justify-content: space-between;
 	/* background-color: blue; */
-	margin: 1rem 1rem 0 1rem;
+	margin: 0 1rem 1rem 1rem;
 	border-top: var(--border-color);
 	padding-top: 1rem;
 }
