@@ -2,7 +2,12 @@
 const mongoose=require('mongoose');
 
 //connect to the database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todo_list_db', {
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todo_list_db', {
+// 	useNewUrlParser: true,
+// 	useUnifiedTopology:true
+// });
+
+mongoose.connect('mongodb+srv://prakhar31:Pad@mongodb@cluster0.unksq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
 	useNewUrlParser: true,
 	useUnifiedTopology:true
 });
