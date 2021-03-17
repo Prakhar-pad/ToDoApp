@@ -203,9 +203,16 @@ option {
 	body{
 		display: flex;
 		flex-direction: column;
-		padding: 0;
+		/* padding: 0; */
 		background-color: rgb(160, 205, 235);
 		overflow: hidden;
-		margin: 0;
+		/* margin: 0; */
+		justify-content: center;
+		align-items: center;
 	}
+
+	/* #todo-container-mob{
+		height:100%;
+		width:100%;
+	} */
 }
