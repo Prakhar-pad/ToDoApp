@@ -201,7 +201,7 @@ option {
 @media only screen and (max-width: 600px){
 	.todo-container{
 		height: auto;
-		width:  15rem;
+		width:  25rem;
 		background-color: rgb(160, 205, 235);
 		margin-left:33%;
 		/* overflow: scroll; */
