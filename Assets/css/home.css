@@ -198,12 +198,12 @@ option {
 
 /* media query */
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 500px){
 	.todo-container{
 		height: auto;
 		width:  100%;
 		background-color: rgb(160, 205, 235);
-		margin-left:33%;
+		/* margin-left:33%; */
 		/* overflow: scroll; */
 	}
 }
