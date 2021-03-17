@@ -26,7 +26,8 @@ body{
 	border-top: var(--border-color);
 	border-bottom: var(--border-color);
 	height: 4rem;
-	width: 120%;
+	margin-left: 1rem;
+	/* width: 120%; */
 }
 
 
@@ -50,7 +51,8 @@ label{
 	border-bottom: var(--border-color);
 	height: 4rem;
 	justify-content: space-between;
-	width:120%;
+	/* width:120%; */
+	margin-left: 1rem;
 }
 
 option {
@@ -125,8 +127,7 @@ option {
 #task-list{
 	display: flex;
 	flex-direction: column;
-	/* justify-content: center;
-	align-items: center; */
+	margin-left:1rem;
 }
 #task-item{
 	display: flex;
@@ -136,7 +137,7 @@ option {
 	border-top: var(--border-color);
 	padding-top: 1rem;
 	/* width: 120%; */
-	margin-left: 2rem;
+	/* margin-left: 1rem; */
 }
 
 #checkbox{
@@ -210,16 +211,16 @@ option {
 	body{
 		display: flex;
 		flex-direction: column;
-		/* padding: 0; */
+		padding: 0;
 		background-color: rgb(160, 205, 235);
 		overflow: hidden;
-		/* margin: 0; */
+		margin: 0;
 		justify-content: center;
 		align-items: center;
 	}
 
-	/* #todo-container-mob{
+	#todo-container-mob{
 		height:100%;
 		width:100%;
-	} */
+	}
 }
