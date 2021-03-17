@@ -2,7 +2,10 @@
 const mongoose=require('mongoose');
 
 //connect to the database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todo_list_db');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todo_list_db', {
+	useNewUrlParser: true,
+	useUnifiedTopology:true
+});
 
 //acquire the connection(to check if it's successful)
 const db=mongoose.connection;
