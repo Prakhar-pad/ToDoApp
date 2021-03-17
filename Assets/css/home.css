@@ -194,3 +194,16 @@ option {
 	border-radius: 2px;
 	margin-right:1rem;
 }
+
+
+/* media query */
+
+@media only screen and (max-width: 600px){
+	.todo-container{
+		height: auto;
+		width:  15rem;
+		background-color: rgb(160, 205, 235);
+		margin-left:33%;
+		/* overflow: scroll; */
+	}
+}
