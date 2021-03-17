@@ -1,7 +1,7 @@
 // ps aux | grep node--to kill port
 
 const express=require('express');
-const port=8000;
+const PORT=process.env.PORT||8000;
 const app=express();
 const bodyParser=require('body-parser');
 
@@ -16,7 +16,7 @@ app.use('/', require('./routes'));
 
 
 
-app.listen(port, function(err){
+app.listen(PORT, function(err){
 
 	if(err){
 

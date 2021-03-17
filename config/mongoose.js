@@ -2,11 +2,11 @@
 const mongoose=require('mongoose');
 
 //connect to the database
-mongoose.connect('mongodb://localhost/todo_list_db');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todo_list_db');
 
 //acquire the connection(to check if it's successful)
 const db=mongoose.connection;
-//error
+//error 
 db.on('error', function(err){console.log(err.message);});
 
 //up and running then print the message
