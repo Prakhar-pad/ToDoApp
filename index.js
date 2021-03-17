@@ -1,7 +1,7 @@
 // ps aux | grep node--to kill port
 
 const express=require('express');
-const PORT=process.env.PORT||8000;
+const PORT=process.env.PORT||8080;
 const app=express();
 const bodyParser=require('body-parser');
 
