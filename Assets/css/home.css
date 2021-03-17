@@ -26,6 +26,7 @@ body{
 	border-top: var(--border-color);
 	border-bottom: var(--border-color);
 	height: 4rem;
+	width: 120%;
 }
 
 
@@ -49,6 +50,7 @@ label{
 	border-bottom: var(--border-color);
 	height: 4rem;
 	justify-content: space-between;
+	width:120%;
 }
 
 option {
@@ -96,6 +98,7 @@ option {
 	display: flex;
 	justify-content: center;
 	align-content: center;
+	width:100%
 	/* background-color: rgb(81, 124, 104); */
 }
 
@@ -122,6 +125,8 @@ option {
 #task-list{
 	display: flex;
 	flex-direction: column;
+	/* justify-content: center;
+	align-items: center; */
 }
 #task-item{
 	display: flex;
@@ -130,6 +135,8 @@ option {
 	margin: 0 1rem 1rem 1rem;
 	border-top: var(--border-color);
 	padding-top: 1rem;
+	/* width: 120%; */
+	margin-left: 2rem;
 }
 
 #checkbox{

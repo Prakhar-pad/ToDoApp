@@ -2,7 +2,7 @@ function myFunction(x) {
       if (x.matches) { // If media query matches
             $( init );
 
-            function init() {
+            function init() { 
             
                   var content=$('#todo-container').html();
               // Remove the #todo-container element but leave its contents
