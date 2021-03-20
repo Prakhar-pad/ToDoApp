@@ -41,7 +41,7 @@
 			</div>
 
 				
-					<div id='add-del-inner-container'>
+					<div id='add-container'>
 						
 						<button type="submit" id='add-button'><i class="fa fa-plus"></i> ADD TASKS</button>
 					</div>
@@ -93,16 +93,19 @@
 			<div id='task-list'>
 			
 				<div  id=task-item>
-						<div id='checkbox'>
+						<!-- <div id='checkbox'>
 							<input type='checkbox' name='id[]' id='checkbox-id' value='<%=i._id%>'>
-						</div>
+						</div> -->
 
 					<!-- </form> -->
 					
 					<div id='task-name-date'>
-						
-						<span><%=i.taskName%></span>
-						<span>
+
+						<div>
+						<input type='checkbox' name='checkbox' id='checkbox-id' value='<%=i._id%>' onchange="toggleLink(this);">
+						<label for='checkbox-id'><span><%=i.taskName%></span></label>
+						</div>
+						<span id='calendar-icon-date'>
 							<i id='calendar-icon' class="fa fa-calendar"></i>
 							<span class='date-task' id='<%=i._id%>'></span>
 							<script>
@@ -115,7 +118,7 @@
 					</div>
 					<span id='category-item'><%=i.category%></span>
 				
-					<div class='delete-button'>
+					<div id='delete-button'>
 						<a href='delete-task/?id=<%=i._id %>'>
 							<div class="tooltip">
 								<img src='https://image.flaticon.com/icons/svg/1214/1214428.svg' height='20px' />

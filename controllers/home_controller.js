@@ -96,11 +96,18 @@ function updateTask(req, res){
 
 }
 
+function pageNotFound(req, res){
+	// res.send("<h1>404 page not found<h1>");
+	return res.render('404');
+}
+
 
 module.exports={
 	home:home,
 	addTask:addTask,
 	deleteTask:deleteTask,
 	editTask:editTask,
-	updateTask: updateTask
+	updateTask: updateTask,
+	pageNotFound:pageNotFound
+
 };

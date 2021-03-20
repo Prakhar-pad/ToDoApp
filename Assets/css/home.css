@@ -85,18 +85,9 @@ option {
 #calender label{
 	margin: 0
 }
-/* Add and Delete button */
-/* 
-.add-del-outer-container{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width:100%;
-	height: 10rem;
-	position: relative;
-} */
 
-#add-del-inner-container{
+
+#add-container{
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -140,16 +131,21 @@ option {
 	/* margin-left: 1rem; */
 }
 
+
 #checkbox{
 	width:10%;
 }
+
+input[type=checkbox]:checked + label {
+	color:black;
+	text-decoration: line-through;
+  }
 
 
 #task-name-date{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/* background-color: yellowgreen; */
 	margin-left:1rem;
 	width: 45%;
 }
@@ -157,6 +153,10 @@ option {
 #task-name-date span{
 	font-family: Georgia, 'Times New Roman', Times, serif;
 
+}
+
+#calendar-icon-date{
+	margin-left: 3rem;
 }
 
 #category-item{
@@ -181,6 +181,13 @@ option {
 	margin-left: 0.5rem;
 	color:rgb(51, 43, 43)
 }
+
+/* delete task */
+
+#delete-button {
+	pointer-events: none;
+}
+
 /* edit-task */
 
 #edit-heading{
