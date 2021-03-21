@@ -3,15 +3,16 @@ const TodoList=require('../models/todo');
 
 
 
-const taskList=[
+// const taskList=[
 
-	{
-		taskName: "Book Reading",
-		category: "Personal",
-		dueDate: "11-02-2021"
-	}
-]
+// 	{
+// 		taskName: "Book Reading",
+// 		category: "Personal",
+// 		dueDate: "11-02-2021"
+// 	}
+// ]
 
+// action for rendering all tasks when home page is requested
 
 function home(req,res){
 
@@ -29,7 +30,7 @@ function home(req,res){
 	})
 }
 
-
+// action for adding task after clicking add task button
 function addTask(req,res){
 	
 	console.log('******',req.body);
@@ -51,6 +52,7 @@ function addTask(req,res){
 	)	
 	}
 
+	// action for deleting a task by clicking on delete icon
 function deleteTask(req,res){
 	console.log(req.query);
 
@@ -64,6 +66,7 @@ function deleteTask(req,res){
 	})
 }
 
+// action for editing a task by clicking on edit icon
 function editTask(req, res){
 
 	let id=req.query.id
@@ -81,6 +84,7 @@ function editTask(req, res){
 
 }
 
+// action for updating task after clicking submit button on edit screen
 function updateTask(req, res){
 	let id=req.query.id;
 	console.log('******', id);
@@ -96,11 +100,14 @@ function updateTask(req, res){
 
 }
 
+// action for invalid url request, taken to 404 page not found
+
 function pageNotFound(req, res){
 	// res.send("<h1>404 page not found<h1>");
 	return res.render('404');
 }
 
+// exporting all functions
 
 module.exports={
 	home:home,

@@ -1,5 +1,6 @@
 const mongoose=require('mongoose');
 
+// creating schemas for database
 const contactSchema=new mongoose.Schema({
 
 taskName: {

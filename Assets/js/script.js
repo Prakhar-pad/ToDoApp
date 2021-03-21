@@ -14,7 +14,7 @@ function myFunction(x) {
 
     myFunction(x) // Call listener function at run time
 
-    // deleting a task 
+    // deleting a task which is checked on checkbox
     function deleteCheckBox() {
       var ul = document.getElementById('tasks-collection-list');
       var li = ul.children;

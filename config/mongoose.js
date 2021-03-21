@@ -1,13 +1,10 @@
 //require the library
 const mongoose=require('mongoose');
-
+require('dotenv/config');
 //connect to the database
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todo_list_db', {
-// 	useNewUrlParser: true,
-// 	useUnifiedTopology:true
-// });
 
-mongoose.connect('mongodb+srv://prakhar31:Pad@mongodb@cluster0.unksq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+
+mongoose.connect(process.env.DB_CONNECTION || 'mongodb://localhost/todo_list_db', {
 	useNewUrlParser: true,
 	useUnifiedTopology:true
 });
