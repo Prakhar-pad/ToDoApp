@@ -16,16 +16,19 @@
 	<body>  
 		<div id='todo-container'>
 			<h1>TODO App</h1>
+			<!-- form to add task name, category and date -->
 		<form action='/add-task' method="POST">
+			<!-- taking input of task name -->
 			<div id='task-input'>
 				<label>Description</label>
 				<input type="text" placeholder="Add a task" name='taskName' required/>
 			</div>
-
+			<!-- taking input of category and date  -->
 			<div class='category-date'>
+				<!-- taking input of category -->
 				<div id='task-category'>
 					<label for='category'>Category</label>
-					<select name='category' id='category'>
+					<select name='category' id='category' required>
 						<option selected disabled hidden>Choose</option>
 						<option value="blank"></option>
 						<option value="Personal">Personal</option>
@@ -34,37 +37,42 @@
 						<option value="Other">Other</option>
 					</select>
 				</div>
+				<!-- taking input of date -->
 				<div id='calender'>
 					<label for='date'>Due Date</label>
 					<input type='date' name='dueDate' required/>
 				</div>
 			</div>
 
-				
+				<!-- Add button -->
 					<div id='add-container'>
 						
 						<button type="submit" id='add-button'><i class="fa fa-plus"></i> ADD TASKS</button>
 					</div>
 
 		</form>
-
-	<!-- <form action='/delete-task' method="POST"> -->
-				<!-- <button id='del-button' type='submit'><i class="fa fa-trash"></i>DELETE</button> -->
-<div id='collection-list'>
+<!-- input form end -->
+	
+<!-- tasks list -->
+<div id='tasks-collection-list'>
 		<% for(let i of locals.Task_List){%> 
 
+			<!-- "if" condition for editing a task -->
 			<% if(i._id==locals.taskId) { %>
 				<h2 id=edit-heading>Edit task</h2>
+				<!-- form for editing a task -->
 				<form action='/update-task/?id=<%=taskId%>' method="POST">
+					<!-- editing task name -->
 					<div id='task-input'>
 						<label>Description</label>
 						<input type="text" placeholder="Edit task" name='taskName' value ='<%=i.taskName%>' required/>
 					</div>
-		
+				<!-- editing task's category and date -->
 					<div class='category-date'>
+						<!-- editing task category -->
 						<div id='task-category'>
 							<label for='category'>Category</label>
-							<select name='category' id='category'>
+							<select name='category' id='category' required>
 								<option selected disabled hidden>Choose</option>
 								<option value="blank"></option>
 								<option value="Personal">Personal</option>
@@ -73,13 +81,15 @@
 								<option value="Other">Other</option>
 							</select>
 						</div>
+						<!-- editing task date -->
 						<div id='calender'>
 							<label for='date'>Due Date</label>
 							<input type='date' name='dueDate'/>
 						</div>
 					</div>
-	
-								<button type="submit" id='edit-button'>Submit</button>
+						<!-- Submit button for editing task -->
+						<button type="submit" id='edit-button'>Submit</button>
+						<!-- canceling the editing of task -->
 						<a href='/'>Cancel</a>
 		
 				</form>
@@ -93,21 +103,18 @@
 			<div id='task-list'>
 			
 				<div  id=task-item>
-						<!-- <div id='checkbox'>
-							<input type='checkbox' name='id[]' id='checkbox-id' value='<%=i._id%>'>
-						</div> -->
-
-					<!-- </form> -->
 					
 					<div id='task-name-date'>
-
+						<!--  checkbox and task name-->
 						<div id='checkbox-taskname'>
-						<input type='checkbox' name='checkbox[]' id='checkbox-id' value='<%=i._id%>' onclick="deleteCheckBox()">
-						<label for='checkbox-id'><span><%=i.taskName%></span></label>
+							<input type='checkbox'  onclick="deleteCheckBox()">
+							<label for='checkbox-id'><span><%=i.taskName%></span></label>
 						</div>
+						<!-- calender icon and date -->
 						<span id='calendar-icon-date'>
 							<i id='calendar-icon' class="fa fa-calendar"></i>
 							<span class='date-task' id='<%=i._id%>'></span>
+							<!-- Javascript code for modifying the format of date -->
 							<script>
 								var d = new Date('<%=i.dueDate%>');
 								var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
@@ -116,22 +123,23 @@
 
 						</span>
 					</div>
+					<!-- category of task -->
 					<span id='category-item'><%=i.category%></span>
 				
+					<!-- delete button for deleting the task -->
 					<div id='delete-button'>
 						<a href='delete-task/?id=<%=i._id %>'>
+							<!-- tooltip to show "delete" text on hover -->
 							<div class="tooltip">
 								<img src='https://image.flaticon.com/icons/svg/1214/1214428.svg' height='20px' />
 							    <span class="tooltiptext">delete</span>
 							</div>
-
-							<!-- <i class="fas fa-minus-circle"></i> -->
-							<!-- <i class="fas fa-trash"></i> -->
 						</a>
 					</div>
+					<!-- edit button for editing the task -->
 					<div class='edit-button'>
 						<a href='edit-task/?id=<%=i.id %>'>
-							<!-- <i class="fa fa-edit"></i> -->
+							<!-- tooltip to show "edit" text on hover -->
 							<div class="tooltip">
 								<img src='https://image.flaticon.com/icons/png/128/2921/2921222.png' height='20px'/>
 							    <span class="tooltiptext">edit</span>
@@ -155,5 +163,3 @@
 			<script type='text/javascript' src='/js/jquery-3.5.1.js'></script>
 	</body>
 </html>
-
-<!-- https://ninjasfiles.s3.amazonaws.com/0000000000002059.png -->

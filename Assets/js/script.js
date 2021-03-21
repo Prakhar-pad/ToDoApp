@@ -7,15 +7,16 @@ function myFunction(x) {
               $('#todo-container').unwrap();
             }
 
-    } 
+    }
 }
     
     var x = window.matchMedia("(max-width: 500px)");
 
     myFunction(x) // Call listener function at run time
 
+    // deleting a task 
     function deleteCheckBox() {
-      var ul = document.getElementById('collection-list');
+      var ul = document.getElementById('tasks-collection-list');
       var li = ul.children;
       for (var i=0; i < li.length; i++) {
           if (li[i] && li[i].children[0].children[0].children[0].children[0].checked) {
