@@ -50,7 +50,7 @@
 
 	<!-- <form action='/delete-task' method="POST"> -->
 				<!-- <button id='del-button' type='submit'><i class="fa fa-trash"></i>DELETE</button> -->
-
+<div id='collection-list'>
 		<% for(let i of locals.Task_List){%> 
 
 			<% if(i._id==locals.taskId) { %>
@@ -101,8 +101,8 @@
 					
 					<div id='task-name-date'>
 
-						<div>
-						<input type='checkbox' name='checkbox' id='checkbox-id' value='<%=i._id%>' onchange="toggleLink(this);">
+						<div id='checkbox-taskname'>
+						<input type='checkbox' name='checkbox[]' id='checkbox-id' value='<%=i._id%>' onchange="toggleLink(this);">
 						<label for='checkbox-id'><span><%=i.taskName%></span></label>
 						</div>
 						<span id='calendar-icon-date'>
@@ -112,13 +112,13 @@
 								var d = new Date('<%=i.dueDate%>');
 								var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
 								document.getElementById("<%=i._id%>").innerHTML = months[d.getMonth()]+' '+d.getDate() +','+' '+d.getFullYear();
-							</script>
+					   		</script>
 
 						</span>
 					</div>
 					<span id='category-item'><%=i.category%></span>
 				
-					<div id='delete-button'>
+					<div class='delete-button'>
 						<a href='delete-task/?id=<%=i._id %>'>
 							<div class="tooltip">
 								<img src='https://image.flaticon.com/icons/svg/1214/1214428.svg' height='20px' />
@@ -150,6 +150,7 @@
 
 
 			</div>
+		</div>
 			<script type='text/javascript' src='/js/script.js'></script>
 			<script type='text/javascript' src='/js/jquery-3.5.1.js'></script>
 	</body>
