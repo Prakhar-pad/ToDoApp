@@ -102,7 +102,7 @@
 					<div id='task-name-date'>
 
 						<div id='checkbox-taskname'>
-						<input type='checkbox' name='checkbox[]' id='checkbox-id' value='<%=i._id%>' onchange="toggleLink(this);">
+						<input type='checkbox' name='checkbox[]' id='checkbox-id' value='<%=i._id%>' onclick="deleteCheckBox()">
 						<label for='checkbox-id'><span><%=i.taskName%></span></label>
 						</div>
 						<span id='calendar-icon-date'>
@@ -118,7 +118,7 @@
 					</div>
 					<span id='category-item'><%=i.category%></span>
 				
-					<div class='delete-button'>
+					<div id='delete-button'>
 						<a href='delete-task/?id=<%=i._id %>'>
 							<div class="tooltip">
 								<img src='https://image.flaticon.com/icons/svg/1214/1214428.svg' height='20px' />
